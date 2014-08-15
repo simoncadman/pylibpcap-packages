@@ -1,0 +1,16 @@
+pkgname=pylibpcap
+pkgver=0.6.4
+pkgrel=1
+pkgdesc="Python interface to libpcap"
+arch=('any')
+url="http://pylibpcap.sourceforge.net"
+license=('BSD')
+depends=('python2' 'libpcap')
+makedepends=('python2' 'libpcap')
+source=(http://downloads.sourceforge.net/pylibpcap/pylibpcap-$pkgver.tar.gz)
+md5sums=()
+
+build() {
+  cd $startdir/src/$pkgname-$pkgver
+  python2 setup.py install --root=$startdir/pkg
+}
